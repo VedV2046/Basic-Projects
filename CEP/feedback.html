@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <link rel="stylesheet" href="styles/feedback.css">
+    <link rel="stylesheet" href="styles/general.css">
+    
+</head>
+<body>
+    <div class="feedback-container">
+        <h1>Feedback Form</h1>
+        <textarea id="feedbackText" placeholder="Leave us a Feedback..."></textarea>
+        <br>
+        <div class="button-container">
+            <button onclick="submitFeedback()">Submit Feedback</button>
+        </div>
+        <div id="feedbackDisplay" class="feedback-display"></div>
+    </div>
+
+    <div class="meme-container">
+        <img class="meme-right" src="images/right.png">
+        <img class="meme-say" src="images/say-name.jpg">
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 S.E 1 Community Engagement Project. Information is for educational purposes only.</p>
+    </footer>
+
+    <script src="feedback.js"></script>
+</body>
+</html>

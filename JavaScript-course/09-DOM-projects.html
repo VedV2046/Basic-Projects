@@ -2,20 +2,52 @@
 <html>
     <head>
         <title>DOM Projects</title>   
+        <style>
+            body {
+                font-family: Arial;
+            }
+            .subscribe-button {
+                border: none;
+                background-color: black;
+                color: white;
+                padding: 10px 15px 10px 15px;
+                font-weight: bold;
+                border-radius: 50px;
+                cursor: pointer;
+                margin-bottom: 30px;
+            }
+            .is-subscribed {
+                background-color: #F0F0F0;
+                color: black;
+            }
+            .cost-input {
+                font-size: 14px;
+                padding: 10px;
+            }
+            .calculate-button {
+                background-color: green;
+                color: white;
+                border: none;
+                font-size: 15px;
+                padding: 12px 15px;
+                cursor: pointer;
+            }
+            
+        </style>
     </head>
     <body>
         <p>YouTube Subscribe Button</p>
         <button onclick="
             subscribe();
-        " class="js-subscribe-button">Subscribe</button>
+        " class="js-subscribe-button subscribe-button">Subscribe</button>
 
         <p>Amazon Shipping Calculator</p>
 
-        <input placeholder="Cost Of Order" class="js-cost-input" onkeydown="
+        <input placeholder="Cost Of Order" class="js-cost-input cost-input" onkeydown="
             handleCostKeydown(event);
         "> 
 
-        <button onclick="
+        <button class="calculate-button" onclick="
             calculateTotal();
         ">Calculate</button>
         <p class=" js-total-cost"></p>
@@ -25,7 +57,22 @@
            button9b();
         ">9b</button>
 
+        <p>
+        <input placeholder="Type Something" class="js-keyUp" onkeyup="
+            
+        const key= document.querySelector('.js-keyUp');
+        document.querySelector('.js-typing')
+            .innerHTML = key.value;
+        ">
+        <p class="js-typing"></p>
+        </p>
+
+        <button class="js-button">Test</button>
+
         <script>
+            const test = document.querySelector('.js-button');
+            console.log(test.classList.contains('js-button'));
+
             console.log(document.querySelector('.js-9a'));
             function button9b() {
                 document.querySelector('.js-9b')
@@ -48,14 +95,14 @@
 
             function calculateTotal () {
                 const inputElement = document.querySelector('.js-cost-input');
-                let cost = Number(inputElement.value);
+                let cost = Number(inputElement.value)*100;
 
-                if(cost < 40) {
-                    cost = cost + 10;
+                if(cost < 4000) {
+                    cost = cost + 1000;
                 }
 
                 document.querySelector('.js-total-cost')
-                    .innerHTML = `$${cost}`;
+                    .innerHTML = `$${cost/100}`;
             }
 
             function subscribe() {
@@ -63,9 +110,11 @@
 
                 if(buttonElement.innerText === 'Subscribe') {
                     buttonElement.innerHTML = 'Subscribed';
+                    buttonElement.classList.add('is-subscribed');
                     }
                 else {
                     buttonElement.innerHTML = 'Subscribe';
+                    buttonElement.classList.remove('is-subscribed');
                 }
             }
         </script> 

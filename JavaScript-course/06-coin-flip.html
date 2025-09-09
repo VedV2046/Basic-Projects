@@ -4,52 +4,72 @@
         <title> Coin Flip</title>
     </head>
     <body>
-        Guess Heads or Tails:
-        <br>
+        Guess HEADS or TAILS:
+    <p>    
         <button onclick="
-            gamePlay('heads');
-        ">Heads</button>
+            gamePlay('HEADS');
+            updateScoreElement();
+        ">HEADS</button>
 
 
         <button onclick="
-            gamePlay('tails');
-        ">Tails</button>
-        
+            gamePlay('TAILS');
+            updateScoreElement();
+        ">TAILS</button>
+    </p>   
+
+    <p class="js-announce"></p>
+    <p class="js-choice"></p>
+    <p class="js-score"></p>
+
+    <p>
         <button onclick="
             score.wins = 0;
             score.losses = 0;
             localStorage.removeItem('score');
-            console.log(score);
+            updateScoreElement();
         ">Reset Score</button>
+    </p>
 
         <script>
-            const score = JSON.parse(localStorage.getItem('score',)) || {
+            let score = JSON.parse(localStorage.getItem('score',)) || {
                     wins: 0,
                     losses: 0,
                 };
+                updateScoreElement();
 
             function gamePlay(guess) {
                 const randomNumber = Math.random();
                 
-                const result = randomNumber < 0.5 ? 'heads' : 'tails';
+                const result = randomNumber < 0.5 ? 'HEADS' : 'TAILS';
 
                 let announce = (guess === result ? 'Win!': 'Lose!');
 
                 if(guess === result)
                 {
-                    score.wins ++ ;
-                    alert(`You Chose ${guess}. Computer Chose ${result}. You ${announce}`);
+                    score.wins +=1 ;
                 }
                 else 
                 {
-                    score.losses ++ ;
-                    alert(`You Chose ${guess}. Computer Chose ${result}. You ${announce}`);
+                    score.losses +=1 ;
                 }
-                console.log(score);
 
                 localStorage.setItem('score',JSON.stringify(score));
+
+                updateScoreElement();
+
+                document.querySelector('.js-announce')
+                    .innerHTML = `${announce}`;
+
+                document.querySelector('.js-choice')
+                    .innerHTML = `You: ${guess} |&nbsp;| ${result} :Computer`;
             }
-        </script>
+
+            function updateScoreElement() {
+                document.querySelector('.js-score')
+                    .innerHTML= `Wins: ${score.wins} Losses: ${score.losses}`;
+            }        
+            </script>
        
     </body>
 </html>

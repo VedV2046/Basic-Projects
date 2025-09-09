@@ -2,51 +2,59 @@
 <html>
     <head>
         <title>CALCULATOR</title>
+        <script src="calculator/calculator.js"></script>
+        <link rel="stylesheet" href="calculator.css">
     </head>
     <body>
         <p>
             <button onclick="
             calculation += 1;
             console.log(calculation);
-        ">1</button>
-        <button onclick="
-            calculation += 2;
-            console.log(calculation);
-        ">2</button>
-        <button onclick="
-            calculation += 3;
-            console.log(calculation);
-        ">3</button>
+            ">1</button>
+
+            <button onclick="
+                calculation += 2;
+                console.log(calculation);
+            ">2</button>
+
+            <button onclick="
+                calculation += 3;
+                console.log(calculation);
+            ">3</button>
         </p>
 
         <p>
             <button onclick="
             calculation += 4;
             console.log(calculation);
-        ">4</button>
-        <button onclick="
-            calculation += 5;
-            console.log(calculation);
-        ">5</button>
-        <button onclick="
-            calculation += 6;
-            console.log(calculation);
-        ">6</button>
+            ">4</button>
+
+            <button onclick="
+                calculation += 5;
+                console.log(calculation);
+            ">5</button>
+
+            <button onclick="
+                calculation += 6;
+                console.log(calculation);
+            ">6</button>
         </p>
 
         <p>
             <button onclick="
             calculation += 7;
             console.log(calculation);
-        ">7</button>
-        <button onclick="
-            calculation += 8;
-            console.log(calculation);
-        ">8</button>
-        <button onclick="
-            calculation += 9;
-            console.log(calculation);
-        ">9</button>
+            ">7</button>
+
+            <button onclick="
+                calculation += 8;
+                console.log(calculation);
+            ">8</button>
+            
+            <button onclick="
+                calculation += 9;
+                console.log(calculation);
+            ">9</button>
         </p>
         
         <button onclick="
@@ -59,43 +67,5 @@
             console.log(calculation);
         ">=</button>
 
-        <script>
-            let calculation = "";
-
-            const sport = {
-                name: 'basketball',
-                price: 2095,
-                ['delivery-time']: '3-days',
-            }; 
-            console.log(sport);
-            console.log(sport.price = 2590);
-            console.log(sport['delivery-time']);
-
-            const product1 = {
-                name: 'YouTube',
-                price: 1000,
-            };
-            const product2 = {
-                name: 'Instagram',
-                price: 200,
-            };
-            
-            function comparePrice(product1, product2) {
-                if(product1.price > product2.price) {
-                    return product1;
-                }
-                else {
-                    return product2;
-                }
-            }
-            console.log(comparePrice(product1, product2));
-
-            if (product1.name === product2.name && product1.price === product2.price) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        </script>
     </body>
 </html>
