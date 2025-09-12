@@ -30,23 +30,10 @@ function autoPlay() {
     }, 1000);
     isAutoPlaying = true;
 
-    document.querySelector('.js-auto-play-button')
-      .innerHTML = 'Stop Playing';  
-    } else {
+  } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
-
-    document.querySelector('.js-auto-play-button')
-      .innerHTML = 'Auto-Play';
   }
-}
-
-function resetScore() {
-  score.wins = 0;
-  score.losses = 0;
-  score.ties = 0;
-  localStorage.removeItem('score');
-  updateScoreElement();
 }
 
 document.querySelector('.js-rock-button')
@@ -69,11 +56,6 @@ document.querySelector('.js-auto-play-button')
     autoPlay();
   });
 
-document.querySelector('.js-reset-score-button')
-  .addEventListener('click', () => {
-    showResetConfirmation();
-  });
-
 document.body.addEventListener('keydown', (event) => {
   if (event.key === 'r') {
     playGame('rock');
@@ -83,12 +65,6 @@ document.body.addEventListener('keydown', (event) => {
   } 
   else if (event.key === 's') {
     playGame('scissors');
-  }
-  else if (event.key === 'a') {
-    autoPlay();
-  }
-  else if (event.key === 'Backspace') {
-    showResetConfirmation();
   }
 });
 
@@ -169,41 +145,3 @@ function pickComputerMove() {
 
   return computerMove;
 }
-
-function showResetConfirmation() {
-  document.querySelector('.js-reset-confirm')
-    .innerHTML = `Are You Sure You Want To Reset The Score?
-    <button class="js-reset-confirm-yes">Yes</button>
-    <button class="js-reset-confirm-no">No</button>`;
-
-    document.querySelector('.js-reset-confirm-yes')
-      .addEventListener('click', () => {
-        resetScore();
-        hideResetConfirmation();
-      });
-      
-    document.querySelector('.js-reset-confirm-no')
-      .addEventListener('click', () => {
-        hideResetConfirmation();
-      });
-}
-
-function hideResetConfirmation() {
-  document.querySelector('.js-reset-confirm')
-    .innerHTML = '';
-}
-
-function toggleDarkMode() {
-  const body = document.body;
-  body.classList.toggle('dark-mode');
-  
-  const button = document.querySelector('.dark-mode-button');
-  if (body.classList.contains('dark-mode')) {
-    button.innerHTML = `<div class="icon-container"><img src="rps/dark-icon.jpg" class="mode-icon"></div> `;
-  } else {
-    button.innerHTML = `<div class="icon-container"><img src="rps/light-icon.jpg" class="mode-icon"></div> `;
-  }
-}
-
-document.querySelector('.dark-mode-button')
-  .addEventListener('click', toggleDarkMode);
