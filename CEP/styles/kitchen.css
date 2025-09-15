@@ -34,6 +34,12 @@
     height: 325px;
     margin-top: 5px;
 }
+.product-image-container:hover {
+    transform: scale(1.05);
+    transition: transform 0.8s ease;
+    box-shadow: rgba(109, 129, 132, 0.937) 2px 4px 22px 3px;
+    border-radius: 8px;
+}
 .product-image {
     width: 200%;
     height: 100%;
