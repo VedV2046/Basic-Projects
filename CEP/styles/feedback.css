@@ -71,3 +71,7 @@ button:hover {
 .meme-say {
     width: 600px;
 }
+
+.meme-container {
+    display: none;
+}
