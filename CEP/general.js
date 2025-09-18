@@ -31,9 +31,3 @@ document.querySelectorAll('.product-item').forEach(item => {
         tooltip.style.opacity = '0';
     });
 });
-
-document.querySelectorAll('.product-item')
-    .forEach(item => {
-        const originalContent = item.innerHTML;
-        item.innerHTML = `<a href="kitchen-products.html">${originalContent}</a>`;
-    });

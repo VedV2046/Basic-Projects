@@ -57,7 +57,7 @@ a {
     left: 0;
     right: 0;  
 }
-.feedback-button {
+button {
     width: 150px;
     height: 35px;
     color: rgb(118, 115, 115);
