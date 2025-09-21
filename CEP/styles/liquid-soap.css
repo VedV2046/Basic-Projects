@@ -9,7 +9,6 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 30px;
 
-
     height: 750px;
     width: 80%;
     margin: 0 auto;
@@ -62,7 +61,8 @@ span {
 }
 
 .kitchen-card,
-.bathroom-card {
+.bathroom-card,
+.household-card {
     box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.1);
     background-color:  rgb(235, 231, 231);
 }
@@ -118,8 +118,4 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.link {
-    display: flex;
 }
