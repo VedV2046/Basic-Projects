@@ -74,4 +74,43 @@ button:hover {
 
 .meme-container {
     display: none;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+    body {
+        margin: 20px auto;
+        padding: 15px;
+    }
+    
+    .feedback-container {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .meme-container {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-top: 30px;
+    }
+    
+    .meme-right, .meme-say {
+        width: 100%;
+        height: auto;
+    }
+    
+    textarea {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
 }

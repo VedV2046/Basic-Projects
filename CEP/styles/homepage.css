@@ -96,3 +96,50 @@
     transition: transform 0.8s ease;
     box-shadow: rgba(246, 126, 15, 0.808) 15px 5px 130px;
 }
+@media (max-width: 768px) {
+    .prelude {
+        margin-top: 150px;
+    }
+    
+    .prelude-text-title {
+        font-size: 24px;
+        padding: 5px;
+    }
+    
+    .prelude-text-container {
+        width: 90%;
+        height: auto;
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .card {
+        width: 90%;
+        max-width: 350px;
+        height: 350px;
+    }
+    
+    .title-text {
+        font-size: 18px;
+    }
+    
+    .card-image {
+        height: 300px;
+    }
+    
+    .title-icon-image {
+        height: 40px;
+        width: 40px;
+    }
+    
+    .icon {
+        height: 30px;
+        width: 30px;
+    }
+}

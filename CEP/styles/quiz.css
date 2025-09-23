@@ -43,3 +43,36 @@ button:hover {
     font-weight: bold;
     text-align: center;
 }
+@media (max-width: 768px) {
+    .quiz-container {
+        max-width: 90%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .question {
+        font-size: 16px;
+        margin: 12px 0 5px;
+    }
+    
+    .options label {
+        font-size: 14px;
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+    
+    button {
+        padding: 12px 24px;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    #result {
+        font-size: 16px;
+    }
+}

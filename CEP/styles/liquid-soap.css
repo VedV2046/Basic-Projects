@@ -119,3 +119,66 @@ span {
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 768px) {
+    .section-title {
+        margin-top: 200px;
+        font-size: 24px;
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        height: auto;
+        width: 90%;
+    }
+    
+    .product-image-container {
+        height: 200px;
+    }
+    
+    .section-title-2 {
+        margin-top: 50px;
+        font-size: 24px;
+    }
+    
+    .kitchen-card:hover,
+    .bathroom-card:hover,
+    .household-card:hover {
+        transform: scale(1.05);
+        transition: 0.4s ease-in-out;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        margin-top: 150px;
+        font-size: 20px;
+    }
+    
+    .grid-container {
+        width: 95%;
+        gap: 15px;
+    }
+    
+    .product-image-container {
+        height: 150px;
+    }
+    
+    .product-content {
+        font-size: 12px;
+    }
+    
+    .prod-name {
+        font-size: 14px;
+    }
+    
+    .info {
+        font-size: 10px;
+    }
+    
+    .section-title-2 {
+        margin-top: 30px;
+        font-size: 20px;
+    }
+}
