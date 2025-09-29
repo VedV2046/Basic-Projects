@@ -130,8 +130,11 @@
     }
     
     .card-image {
-        height: 300px;
-        width: 100%
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
     
     .title-icon-image {
