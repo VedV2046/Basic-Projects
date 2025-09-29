@@ -124,6 +124,10 @@
         max-width: 350px;
         height: 350px;
     }
+
+    .card-image {
+        width: 100%;
+    }
     
     .title-text {
         font-size: 18px;
