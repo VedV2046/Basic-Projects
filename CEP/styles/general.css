@@ -20,7 +20,7 @@ a {
     margin-bottom: 100px;
 }
 .header {
-    background-color: black;
+    background-image: url("title.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
