@@ -1,5 +1,6 @@
 import {cart, removeFromCart} from './cart.js';
 import {products} from './products.js';
+import {calculateCartQuantity} from './cart.js';
 
 let cartSummaryHTML = '';
 
@@ -106,9 +107,7 @@ document.querySelectorAll('.js-delete-link')
 function updateCartQuantity () {
     let cartQuantity = 0;
 
-    cart.forEach((cartItem) => {
-        cartQuantity += cartItem.quantity;
-    });
+    calculateCartQuantity();
 
     document.querySelector('.return-to-home-link')
         .innerHTML = `<div class="checkout-header-middle-section">
