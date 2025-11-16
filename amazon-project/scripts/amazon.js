@@ -1,6 +1,5 @@
 import {cart, addToCart, calculateCartQuantity} from './cart.js';
 import {products} from './products.js';
-import { calculateCartQuantity } from './cart.js';
 
 let productsHTML = '';
 
@@ -55,14 +54,12 @@ document.querySelector('.js-products-grid')
     .innerHTML = productsHTML;
 
 function updateCartQuantity () {
-    let cartQuantity = 0;
-
-    calculateCartQuantity();
+    const cartQuantity = calculateCartQuantity();
 
     document.querySelector('.js-cart-quantity')
-        .innerHTML =cartQuantity;
+        .innerHTML = cartQuantity;
 
-    const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
+    const addedMessage = document.querySelector(`.js-added-to-cart-${product.id}`);
     addedMessage.classList.add('added-to-cart-visible');
 
     setTimeout(() => {
