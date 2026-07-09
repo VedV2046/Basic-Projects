@@ -138,12 +138,15 @@ export function renderOrderSummary() {
 
     function updateCartQuantity () {
         const cartQuantity = calculateCartQuantity();
+        const checkoutHeaderMiddleSection = document.querySelector('.checkout-header-middle-section');
 
-        document.querySelector('.return-to-home-link')
-            .innerHTML = `<div class="checkout-header-middle-section">
-                        <a class="return-to-home-link" 
-                            href="amazon.html">(${cartQuantity} items)</a> 
-                    </div>`;
+        if(!checkoutHeaderMiddleSection) {
+            return;
+        }
+
+        checkoutHeaderMiddleSection
+            .innerHTML = 
+                `Checkout ${cartQuantity} <a class="return-to-home-link" href="amazon.html" title="Return to home">Return to home</a>`;
     }
 
     updateCartQuantity();
