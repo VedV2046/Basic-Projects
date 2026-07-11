@@ -7,13 +7,21 @@ import {loadCart} from './cart.js';
 // import '../scripts/backend-practise.js';
 
 async function loadPage() {
-    await loadProductsFetch();
+    try{
+        //throw 'error1';
 
-    await new Promise((resolve) => {
-        loadCart(() => {
-            resolve();
+        await loadProductsFetch();
+
+        await new Promise((resolve) => {
+            loadCart(() => {
+                resolve();
+            });
         });
-    });
+    }   
+    catch(error) {
+        console.log("Unexpected Error. Pls Try again later.");
+    }
+    
 
     renderCheckoutHeader();
     renderOrderSummary();
